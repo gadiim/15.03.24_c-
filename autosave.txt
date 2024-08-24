@@ -1,0 +1,9 @@
+United Armies:
+paladin: 100 0 0
+shadow: 50 0 3
+
+Legion:
+paladin: 100 0 0
+
+Horde:
+shadow: 50 0 3

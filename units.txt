@@ -1,0 +1,263 @@
+//==================================
+
+class Human
+{
+    double hitPoints;
+    double damage;
+    double armor;
+    double regeneration;
+    double chancesToHit;
+    double target_1;
+    double target_2;
+    double attackRange;
+    std::string immunity = "no";
+    std::string race = "human";
+};
+
+class Paladin : public Human
+{
+public:
+    double hitPoints = 100;
+    double damage = 20;
+    double armor = 10;
+    double regeneration = 0.0;
+    double chancesToHit = 0.75;
+    double target_1 = 1;
+    double target_2 = 1;
+    double attackRange = 1;
+    std::string immunity = "no";
+    std::string type = "paladin";
+    // warrior;
+    // 1 attack;
+    // 2 attacks type:
+    // - sword attck (target_1);
+    // - cover with shield himself (target_2 , damage 0, chancesToHit = 1, armor +15);
+};
+
+class Barbarian : public Human
+{
+public:
+    double hitPoints = 110;
+    double damage = 10;
+    double armor = 0;
+    double regeneration = 0.0;
+    double chancesToHit = 0.7;
+    double target_1 = 1;
+    double target_2 = 1;
+    double attackRange = 1;
+    std::string immunity = "no";
+    std::string type = "barbarian";
+    // warrior;
+    // 2 attacks;
+    // 1 attack type;
+};
+
+class Archer : public Human
+{
+public:
+    double hitPoints = 90;
+    double damage = 15;
+    double armor = 0;
+    double regeneration = 0.0;
+    double chancesToHit = 0.75;
+    double target_1 = 1;
+    double target_2 = 0;
+    double attackRange = 3;
+    std::string immunity = "no";
+    std::string type = "archer";
+    // archer;
+    // 1 attack;
+    // 1 attack type;
+};
+
+class Crossbowman : public Human
+{
+public:
+    double hitPoints = 80;
+    double damage = 20;
+    double armor = 5;
+    double regeneration = 0.0;
+    double chancesToHit = 0.9;
+    double target_1 = 1;
+    double target_2 = 0;
+    double attackRange = 2;
+    std::string immunity = "no";
+    std::string type = "crossbowman";
+    // archer;
+    // 1 attack;
+    // 1 attack type (enemy armor ignore);
+};
+
+class Wizart : public Human
+{
+public:
+    double hitPoints = 70;
+    double damage = 10;
+    double armor = 0;
+    double regeneration = 0.1;
+    double chancesToHit = 0.75;
+    double target_1 = 1;
+    double target_2 = 6;
+    double attackRange = 3;
+    std::string immunity = "no";
+    std::string race = "human";
+    std::string type = "wizart";
+    // magic;
+    // 1 attack;
+    // 2 attacks type:
+    // - fireball (target_1), +5 damage burning 2 turns;
+    // - firestorm (target_2,damage 10, chancesToHit = 0.5); 
+
+};
+
+class Priest : public Human
+{
+public:
+    double hitPoints = 75;
+    double damage = 0;
+    double armor = 0;
+    double regeneration = 0.0;
+    double chancesToHit = 0.9;
+    double target_1 = 1;
+    double target_2 = 6;
+    double attackRange = 3;
+    std::string immunity = "no";
+    std::string race = "human";
+    std::string type = "priest";
+    // magic;
+    // 1 attack;
+    // 2 attacks type:
+    // - healing (target_1);
+    // - blessing (target_2,damage 0, chancesToHit = 0.55, friends chancesToHit +5); 
+};
+
+
+
+class Undead
+{
+public:
+    double hitPoints;
+    double damage;
+    double armor;
+    double regeneration;
+    double chancesToHit;
+    double target_1;
+    double target_2;
+    double attackRange;
+    std::string immunity = "no";
+    std::string race = "undead";
+};
+
+class Dark_Warrior : public Undead
+{
+public:
+    double hitPoints = 80;
+    double damage = 25;
+    double armor = 5;
+    double regeneration = 0.1;
+    double chancesToHit = 0.8;
+    double target_1 = 1;
+    double target_2 = 0;
+    double attackRange = 1;
+    std::string immunity = "no";
+    std::string type = "dark warrior";
+    // warrior
+    // 1 attack
+    // 1 attack type
+};
+
+class Skeleton : public Undead
+{
+public:
+    double hitPoints = 65;
+    double damage = 15;
+    double armor = 0;
+    double regeneration = 0.0;
+    double chancesToHit = 0.6;
+    double target_1 = 1;
+    double target_2 = 0;
+    double attackRange = 1;
+    std::string immunity = "magic";
+    std::string type = "skeleton";
+    // warrior
+    // 1 attack
+    // 1 attack type
+
+};
+
+class Dark_Hunter : public Undead
+{
+public:
+    double hitPoints = 90;
+    double damage = 10;
+    double armor = 0;
+    double regeneration = 0.0;
+    double chancesToHit = 0.75;
+    double target_1 = 1;
+    double target_2 = 0;
+    double attackRange = 3;
+    std::string immunity = "no";
+    std::string type = "dark hunter";
+    // archer
+    // 1 attack
+    // 1 attack type
+    // +5 damage poison 3 turns, enemy armor ignore
+};
+
+class Witch : public Undead
+{
+public:
+    double hitPoints = 65;
+    double damage = 15;
+    double armor = 0;
+    double regeneration = 0.15;
+    double chancesToHit = 0.6;
+    double target_1 = 1;
+    double target_2 = 6;
+    double attackRange = 3;
+    std::string immunity = "no";
+    std::string type = "witch";
+    // magic;
+    // 1 attack;
+    // 2 attacks type:
+    // - ulcer (target_1);
+    // - curse (target_2, damage 0, chancesToHit = 0.45, enemies chancesToHit -10);  
+};
+
+class Occultist : public Undead
+{
+public:
+    double hitPoints = 65;
+    double damage = 5;
+    double armor = 0;
+    double regeneration = 0.0;
+    double chancesToHit = 0.6;
+    double target_1 = 6;
+    double target_2 = 0;
+    double attackRange = 3;
+    std::string immunity = "no";
+    std::string type = "occultist";
+    // magic;
+    // 1 attack;
+    // drains HP of 6 enemies (6 * 5/2) 1/2 to himself, enemy armor ignore
+};
+
+class Shadow : public Undead
+{
+public:
+    double hitPoints = 50;
+    double damage = 0;
+    double armor = 0;
+    double regeneration = 0.0;
+    double chancesToHit = 0.35;
+    double target_1 = 1;
+    double target_2 = 0;
+    double attackRange = 3;
+    std::string immunity = "weapon";
+    std::string type = "shadow";
+    // magic;
+    // 1 attack;
+    // paralyze enemy 1 turn;
+};
+
+//==================================
